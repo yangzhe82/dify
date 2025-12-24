@@ -25,7 +25,7 @@ COPY package.json pnpm-lock.yaml /app/web/
 # Use packageManager from package.json
 RUN corepack install
 RUN pnpm config set registry https://registry.npmmirror.com/
-RUN pnpm install --frozen-lockfile --network-timeout 600000
+RUN pnpm install --frozen-lockfile --fetch-timeout 600000
 
 # build resources
 FROM base AS builder
