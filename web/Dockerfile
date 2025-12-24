@@ -24,7 +24,7 @@ COPY package.json pnpm-lock.yaml /app/web/
 
 # Use packageManager from package.json
 RUN corepack install
-
+RUN pnpm config set registry https://registry.npmmirror.com/
 RUN pnpm install --frozen-lockfile
 
 # build resources
